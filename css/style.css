@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game_area{
+    border: 3px solid #333;
+    margin: 10px auto;
+    padding: 10px;
+    width: 480px;
+    height: 620px;
+}
+
+.dice_area, .monsters_area{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    margin-left: 35px;
+    width: 100%;
+}
+
+.dice_img {
+    margin: auto 10px;
+    
+    width: 75px;
+}
+
+.button_roll, .challenger{
+    background: #333;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 5px 5px 15px;
+    color: lightcyan;
+    font-size: 15px;
+    font-weight: bold;
+    height: 30px;
+    margin:  5px 0;
+    margin-left: 95px;
+    width: 180px;
+}
+
+.monster_door, img{
+    display: flex;
+    padding: 5px;
+    margin-left: 160px;
+    width: 120px;
+}
+
+.button_roll:hover, .challenger:hover{
+    border: 2px solid lightcyan;
+    font-size: 20px;
+}
+p{
+    text-align: center;
+    margin-top: 30px;
+}
