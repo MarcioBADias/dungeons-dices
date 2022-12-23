@@ -6,23 +6,24 @@
 
 .game_area{
     border: 3px solid #333;
+    border-radius: 15px;
     margin: 10px auto;
     padding: 10px;
     width: 480px;
-    height: 620px;
+    min-height: 420 px;
 }
 
 .dice_area, .monsters_area{
     display: flex;
     flex-wrap: wrap;
     margin: 10px auto;
-    margin-left: 35px;
+    justify-content: space-around;
     width: 100%;
 }
 
+
 .dice_img {
     margin: auto 10px;
-    
     width: 75px;
 }
 
@@ -30,20 +31,27 @@
     background: #333;
     border: none;
     border-radius: 25px;
-    box-shadow: 5px 5px 15px;
     color: lightcyan;
     font-size: 15px;
     font-weight: bold;
     height: 30px;
     margin:  5px 0;
-    margin-left: 95px;
     width: 180px;
 }
 
-.monster_door, img{
-    display: flex;
+.door_area{
+    background: url(../assets/img/dorr-bg.png) center / cover no-repeat;
+    border-radius: 3px;
+}
+
+.monster_door{
     padding: 5px;
-    margin-left: 160px;
+    width: 120px;
+}
+
+img{
+    flex-wrap: wrap;
+    padding: 5px;
     width: 120px;
 }
 
@@ -51,7 +59,4 @@
     border: 2px solid lightcyan;
     font-size: 20px;
 }
-p{
-    text-align: center;
-    margin-top: 30px;
-}
+

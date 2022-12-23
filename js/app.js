@@ -32,7 +32,7 @@ const newButton = (button, classButton) => {
 }
 roll.addEventListener('click', e => {
     createHeros(array);
-    // newButton(buttonArea,'challenger')
+    buttonArea.innerHTML = `Seus aventureiros estão prontos? Bata na porta derrote os monstros.<br>Level da Dungeon: ${dungeonLevel+1}`
 })
 
 monsterDoor.addEventListener('click', () => {
@@ -41,15 +41,18 @@ monsterDoor.addEventListener('click', () => {
         monsterDoor.setAttribute('data-door','open')
         monsterDoor.setAttribute('src', "./assets/img/open-door.png")
         // chama o monstro
-        const monster = document.createElement('img');
-        const divMonster = document.createElement('div');
-        monster.setAttribute('src', `./assets/img/${rollRandomResult(3)}-monster.png`)
-        if(rollRandomResult(3) <= 1) {
-            monster.setAttribute('data-class','fighter')
+        for(let i = 0; i <= dungeonLevel; i++){
+            const monster = document.createElement('img');
+            const divMonster = document.createElement('div');
+            monster.setAttribute('src', `./assets/img/${rollRandomResult(3)}-monster.png`)
+            if(rollRandomResult(3) <= 1) {
+                monster.setAttribute('data-class','fighter')
+            }
+            // cola na tela
+            monsterArea.appendChild(divMonster)
+            divMonster.appendChild(monster)
         }
-        // cola na tela
-        monsterArea.appendChild(divMonster)
-        divMonster.appendChild(monster)
+        dungeonLevel += 1
         return
         
     }
@@ -57,6 +60,8 @@ monsterDoor.addEventListener('click', () => {
         monsterDoor.setAttribute('data-door','close')
         monsterDoor.setAttribute('src', "./assets/img/close-door.png")
         monsterArea.innerHTML = ''
+        buttonArea.innerHTML = `Seus aventureiros estão prontos? Bata na porta derrote os monstros.<br>Level da Dungeon: ${dungeonLevel+1}`
+        return
     }
         
 })
